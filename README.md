@@ -1,6 +1,6 @@
 # rhemuk
 
-Delete tweets (or just replies or retweets) from your timeline, including tweets
+Delete tweets from your timeline, including tweets
 beyond the [3,200 tweet limit](https://web.archive.org/web/20131019125213/https://dev.twitter.com/discussions/276).
 
 ## Prerequisites
@@ -25,7 +25,7 @@ TWITTER_ACCESS_TOKEN_SECRET="[your access token secret]"
 1. Scroll to the bottom of the page, click 'Request your archive' (not 'Your Twitter
   data' in the left sidebar!), and wait for the email to arrive.
 1. Follow the link in the email to download your Tweet archive.
-1. Unpack the archive, and move `tweets.csv` to the same directory as this script.
+1. Unpack the archive and move `tweets.csv` somewhere else, like `$HOME`.
 
 ## Installation
 
@@ -55,7 +55,7 @@ To delete any tweet in between *2013 December 1* and *2013 December 31*
 rhemuk your-tweet-csv-file.csv 2013-12-31 2013-12-01
 ```
 
-Or delete all retweets:
+And to delete all tweets
 
 ```bash
 rhemuk your-tweet-csv-file.csv
