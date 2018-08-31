@@ -1,0 +1,60 @@
+name:                rhemuk
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/ibnuda/rhemuk#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Ibnu D. Aji
+maintainer:          iaji@siskam.link
+copyright:           Copyright (c) 2018 - Ibnu D. Aji
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  exposed-modules:     Lib
+  other-modules:       Lib.Prelude
+                     , Lib.Types
+                     , Lib.Internal
+                     , Lib.Plumbing
+  build-depends:       base >= 4.7 && < 5
+                     , protolude
+                     , bytestring
+                     , cassava
+                     , ReadArgs
+                     , text
+                     , time
+                     , twitter-conduit
+                     , twitter-types
+                     , vector
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+executable rhemuk
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , rhemuk
+                     , protolude
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+test-suite rhemuk-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , rhemuk
+                     , protolude
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+source-repository head
+  type:     git
+  location: https://github.com/ibnuda/rhemuk
